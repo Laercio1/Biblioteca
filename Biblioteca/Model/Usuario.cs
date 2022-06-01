@@ -1,46 +1,31 @@
-﻿namespace Model
+﻿using System;
+
+namespace Model
 {
+
+
+
+
     public class Usuario
     {
         private int codigo;
-        private int tipoUsuario;
         private string nome;
         private string endereco;
         private string bairro;
-        private string cidade;
-        private string estado;
-        private string cep;
-        private string cpf;
-        private string rg;
+        private string codigoCidade;
+        private string codigoEstado;
+        private int cep;
+        private int cpf;
+        private int rg;
         private string telefone;
         private string email;
-        private string dataCadastro;
-        private string dataNascimento;
+        private DateTime dataNascimento;
+        private string senha;
 
-        public int Codigo
-        {
-            get { return codigo; }
-            set { codigo = value; }
-        }
-        public string Nome
-        {
-            get { return nome; }
-            set { nome = value; }
-        }
-        public int TipoUsuario
-        {
-            get { return tipoUsuario; }
-            set { tipoUsuario = value; }
-        }
-        public string DataNascimento
+        public DateTime DataNascimento
         {
             get { return dataNascimento; }
             set { dataNascimento = value; }
-        }
-        public string DataCadastro
-        {
-            get { return dataCadastro; }
-            set { dataCadastro = value; }
         }
         public string Email
         {
@@ -52,47 +37,56 @@
             get { return telefone; }
             set { telefone = value; }
         }
-        public string Rg
+        public int Rg
         {
             get { return rg; }
             set { rg = value; }
         }
-        public string Cpf
+        public int Cpf
         {
             get { return cpf; }
             set { cpf = value; }
         }
-        public string Endereco
-        {
-            get { return endereco; }
-            set { endereco = value; }
-        }
-        public string Cep
+        public int Cep
         {
             get { return cep; }
             set { cep = value; }
         }
-        public string Estado
+        public string CodigoCidade
         {
-            get { return estado; }
-            set { estado = value; }
+            get { return codigoCidade; }
+            set { codigoCidade = value; }
         }
-        public string Cidade
+        public string CodigoEstado
         {
-            get { return cidade; }
-            set { cidade = value; }
+            get { return codigoEstado; }
+            set { codigoEstado = value; }
         }
         public string Bairro
         {
             get { return bairro; }
             set { bairro = value; }
         }
-
-
-
-
-
-
+        public string Endereco
+        {
+            get { return endereco; }
+            set { endereco = value; }
+        }
+        public string Nome
+        {
+            get { return nome; }
+            set { nome = value; }
+        }
+        public int Codigo
+        {
+            get { return codigo; }
+            set { codigo = value; }
+        }
+        public string Senha
+        {
+            get { return senha; }
+            set { senha = value; }
+        }
 
     }
 }

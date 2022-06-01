@@ -1,13 +1,13 @@
 ﻿using Model;
-using System;
 using System.Data;
 using System.Data.SqlClient;
+using System;
 
 namespace DAL
 {
-    public class UsuarioDAL
+    public class LeitorDAL
     {
-        public Usuario Inserir(Usuario _usuario)
+        public Leitor Inserir(Leitor _leitor)
         {
             SqlConnection cn = new SqlConnection();
             try
@@ -16,93 +16,101 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "SP_InserirUsuario";
+                cmd.CommandText = "SP_InserirLeitor";
 
                 SqlParameter pcodigo = new SqlParameter("@Codigo", SqlDbType.Int)
                 {
-                    Value = _usuario.Codigo
+                    Value = _leitor.Codigo
                 };
                 cmd.Parameters.Add(pcodigo);
 
+                SqlParameter pcodigoTipoLeitor = new SqlParameter("@CodigoTipoLeitor", SqlDbType.Int)
+                {
+                    Value = _leitor.CodigoTipoLeitor
+                };
+                cmd.Parameters.Add(pcodigoTipoLeitor);
+
                 SqlParameter pnome = new SqlParameter("@Nome", SqlDbType.VarChar)
                 {
-                    Value = _usuario.Nome
+                    Value = _leitor.Nome
                 };
                 cmd.Parameters.Add(pnome);
 
                 SqlParameter pendereco = new SqlParameter("@Endereco", SqlDbType.VarChar)
                 {
-                    Value = _usuario.Endereco
+                    Value = _leitor.Endereco
                 };
                 cmd.Parameters.Add(pendereco);
 
                 SqlParameter pbairro = new SqlParameter("@Bairro", SqlDbType.VarChar)
                 {
-                    Value = _usuario.Bairro
+                    Value = _leitor.Bairro
                 };
                 cmd.Parameters.Add(pbairro);
 
                 SqlParameter pcodigoCidade = new SqlParameter("@CodigoCidade", SqlDbType.Int)
                 {
-                    Value = _usuario.CodigoCidade
+                    Value = _leitor.CodigoCidade
                 };
                 cmd.Parameters.Add(pcodigoCidade);
 
                 SqlParameter pcodigoEstado = new SqlParameter("@CodigoEstado", SqlDbType.Int)
                 {
-                    Value = _usuario.CodigoEstado
+                    Value = _leitor.CodigoEstado
                 };
                 cmd.Parameters.Add(pcodigoEstado);
 
                 SqlParameter pcep = new SqlParameter("@Cep", SqlDbType.VarChar)
                 {
-                    Value = _usuario.Cep
+                    Value = _leitor.Cep
                 };
                 cmd.Parameters.Add(pcep);
 
                 SqlParameter pcpf = new SqlParameter("@Cpf", SqlDbType.VarChar)
                 {
-                    Value = _usuario.Cpf
+                    Value = _leitor.Cpf
                 };
                 cmd.Parameters.Add(pcpf);
 
                 SqlParameter prg = new SqlParameter("@Rg", SqlDbType.VarChar)
                 {
-                    Value = _usuario.Rg
+                    Value = _leitor.Rg
                 };
                 cmd.Parameters.Add(prg);
 
                 SqlParameter ptelefone = new SqlParameter("@Telefone", SqlDbType.VarChar)
                 {
-                    Value = _usuario.Telefone
+                    Value = _leitor.Telefone
                 };
                 cmd.Parameters.Add(ptelefone);
 
                 SqlParameter pemail = new SqlParameter("@Email", SqlDbType.VarChar)
                 {
-                    Value = _usuario.Email
+                    Value = _leitor.Email
                 };
                 cmd.Parameters.Add(pemail);
 
-                SqlParameter psenha = new SqlParameter("@Senha", SqlDbType.VarChar)
+                SqlParameter pdataCadastro = new SqlParameter("@DataCadastro", SqlDbType.DateTime)
                 {
-                    Value = _usuario.Senha
+                    Value = _leitor.DataCadastro
                 };
-                cmd.Parameters.Add(psenha);
+                cmd.Parameters.Add(pdataCadastro);
 
                 SqlParameter pdataNascimento = new SqlParameter("@DataNascimento", SqlDbType.DateTime)
                 {
-                    Value = _usuario.DataNascimento
+                    Value = _leitor.DataNascimento
                 };
                 cmd.Parameters.Add(pdataNascimento);
 
                 cn.Open();
-                _usuario.Codigo = Convert.ToInt32(cmd.ExecuteScalar());
+                _leitor.Codigo = Convert.ToInt32(cmd.ExecuteScalar());
 
-                return _usuario;
+                return _leitor;
+
             }
             catch (SqlException ex)
             {
+
                 throw new Exception("Servidor SQL Erro: " + ex.Message);
             }
             catch (Exception ex)
@@ -114,7 +122,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Usuario Alterar(Usuario _usuario)
+        public Leitor Alterar(Leitor _leitor)
         {
             SqlConnection cn = new SqlConnection();
             try
@@ -123,67 +131,72 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "SP_AlterarUsuario";
+                cmd.CommandText = "SP_AlterarLeitor";
 
                 SqlParameter pcodigo = new SqlParameter("@Codigo", SqlDbType.Int);
-                pcodigo.Value = _usuario.Codigo;
+                pcodigo.Value = _leitor.Codigo;
                 cmd.Parameters.Add(pcodigo);
 
+                SqlParameter pcodigoTipoLeitor = new SqlParameter("@CodigoTipoLeitor", SqlDbType.Int);
+                pcodigoTipoLeitor.Value = _leitor.CodigoTipoLeitor;
+                cmd.Parameters.Add(pcodigoTipoLeitor);
+
                 SqlParameter pnome = new SqlParameter("@Nome", SqlDbType.VarChar);
-                pnome.Value = _usuario.Nome;
+                pnome.Value = _leitor.Nome;
                 cmd.Parameters.Add(pnome);
 
                 SqlParameter pendereco = new SqlParameter("@Endereco", SqlDbType.VarChar);
-                pendereco.Value = _usuario.Endereco;
+                pendereco.Value = _leitor.Endereco;
                 cmd.Parameters.Add(pendereco);
 
                 SqlParameter pbairro = new SqlParameter("@Bairro", SqlDbType.VarChar);
-                pbairro.Value = _usuario.Bairro;
+                pbairro.Value = _leitor.Bairro;
                 cmd.Parameters.Add(pbairro);
 
                 SqlParameter pcodigoCidade = new SqlParameter("@CodigoCidade", SqlDbType.Int);
-                pcodigoCidade.Value = _usuario.CodigoCidade;
+                pcodigoCidade.Value = _leitor.CodigoCidade;
                 cmd.Parameters.Add(pcodigoCidade);
 
                 SqlParameter pcodigoEstado = new SqlParameter("@CodigoEstado", SqlDbType.Int);
-                pcodigoEstado.Value = _usuario.CodigoEstado;
+                pcodigoEstado.Value = _leitor.CodigoEstado;
                 cmd.Parameters.Add(pcodigoEstado);
 
                 SqlParameter pcep = new SqlParameter("@Cep", SqlDbType.VarChar);
-                pcep.Value = _usuario.Cep;
+                pcep.Value = _leitor.Cep;
                 cmd.Parameters.Add(pcep);
 
                 SqlParameter pcpf = new SqlParameter("@Cpf", SqlDbType.VarChar);
-                pcpf.Value = _usuario.Cpf;
+                pcpf.Value = _leitor.Cpf;
                 cmd.Parameters.Add(pcpf);
 
                 SqlParameter prg = new SqlParameter("@Rg", SqlDbType.VarChar);
-                prg.Value = _usuario.Rg;
+                prg.Value = _leitor.Rg;
                 cmd.Parameters.Add(prg);
 
                 SqlParameter ptelefone = new SqlParameter("@Telefone", SqlDbType.VarChar);
-                ptelefone.Value = _usuario.Telefone;
+                ptelefone.Value = _leitor.Telefone;
                 cmd.Parameters.Add(ptelefone);
 
                 SqlParameter pemail = new SqlParameter("@Email", SqlDbType.VarChar);
-                pemail.Value = _usuario.Email;
+                pemail.Value = _leitor.Email;
                 cmd.Parameters.Add(pemail);
 
-                SqlParameter psenha = new SqlParameter("@Senha", SqlDbType.VarChar);
-                psenha.Value = _usuario.Senha;
-                cmd.Parameters.Add(psenha);
+                SqlParameter pdataCadastro = new SqlParameter("@DataCadastro", SqlDbType.DateTime);
+                pdataCadastro.Value = _leitor.DataCadastro;
+                cmd.Parameters.Add(pdataCadastro);
 
                 SqlParameter pdataNascimento = new SqlParameter("@DataNascimento", SqlDbType.DateTime);
-                pdataNascimento.Value = _usuario.DataNascimento;
+                pdataNascimento.Value = _leitor.DataNascimento;
                 cmd.Parameters.Add(pdataNascimento);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
 
-                return _usuario;
+                return _leitor;
             }
             catch (SqlException ex)
             {
+
                 throw new Exception("Servidor SQL Erro: " + ex.Message);
             }
             catch (Exception ex)
@@ -194,6 +207,7 @@ namespace DAL
             {
                 cn.Close();
             }
+
         }
         public DataTable Buscar(string _filtro)
         {
@@ -206,7 +220,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 da.SelectCommand = cmd;
                 da.SelectCommand.Connection = cn;
-                da.SelectCommand.CommandText = "SP_BuscarUsuario";
+                da.SelectCommand.CommandText = "SP_BuscarLeitor";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 SqlParameter pfiltro = new SqlParameter("@Filtro", SqlDbType.VarChar);
                 pfiltro.Value = _filtro;
@@ -215,10 +229,10 @@ namespace DAL
                 cn.Open();
                 da.Fill(dt);
                 return dt;
-
             }
             catch (SqlException ex)
             {
+
                 throw new Exception("Servidor SQL Erro: " + ex.Message);
             }
             catch (Exception ex)
@@ -229,7 +243,6 @@ namespace DAL
             {
                 cn.Close();
             }
-
         }
         public void Excluir(int _codigo)
         {
@@ -240,7 +253,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "SP_ExcluirUsuario";
+                cmd.CommandText = "SP_ExcluirLeitor";
                 SqlParameter pcodigo = new SqlParameter("@Codigo", SqlDbType.Int);
                 pcodigo.Value = _codigo;
                 cmd.Parameters.Add(pcodigo);
@@ -248,11 +261,11 @@ namespace DAL
                 cn.Open();
                 int resultado = cmd.ExecuteNonQuery();
                 if (resultado != 1)
-                    throw new Exception("Não possível excluir o usuário: " + _codigo.ToString());
-
+                    throw new Exception("Não possível excluir o leitor: " + _codigo.ToString());
             }
             catch (SqlException ex)
             {
+
                 throw new Exception("Servidor SQL Erro: " + ex.Message);
             }
             catch (Exception ex)

@@ -4,33 +4,42 @@ namespace Model
 {
     public class Reserva
     {
-        private int tombo;
+        private int codigo;
+        private int codigoLivro;
+        private int codigoLeitor;
         private int codigoUsuario;
-        private int codigoFuncionario;
-        private DateTime data;
+        private DateTime dataHoraReserva;
 
-        public DateTime Data
+        public int Codigo
         {
-            get { return data; }
-            set { data = value; }
+            get
+            {
+                return codigo;
+            }
+            set
+            {
+                codigo = value;
+            }
         }
-
-        public int CodigoFuncionario
+        public DateTime DataHoraReserva
         {
-            get { return codigoFuncionario; }
-            set { codigoFuncionario = value; }
+            get { return dataHoraReserva; }
+            set { dataHoraReserva = value; }
         }
-
         public int CodigoUsuario
         {
             get { return codigoUsuario; }
             set { codigoUsuario = value; }
         }
-
-        public int Tombo
+        public int CodigoLeitor
         {
-            get { return tombo; }
-            set { tombo = value; }
+            get { return codigoLeitor; }
+            set { codigoLeitor = value; }
+        }
+        public int CodigoLivro
+        {
+            get { return codigoLivro; }
+            set { codigoLivro = value; }
         }
 
     }

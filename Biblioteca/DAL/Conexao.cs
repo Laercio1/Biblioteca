@@ -6,7 +6,7 @@
         {
             get
             {
-                return @"User ID=SA;Initial Catalog=Biblioteca;Data Source=.\SQLEXPRESS2019;Password=Senailab05";
+                return @"Data Source = NSYS-CDS-0301\SQLDESENVOLVEDOR; Initial Catalog = Loja; Integrated Security = True";
             }
         }
     }

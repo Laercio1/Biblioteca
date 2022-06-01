@@ -41,14 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="datetime.cs" />
+    <Compile Include="Autor.cs" />
+    <Compile Include="Categoria.cs" />
+    <Compile Include="Cidade.cs" />
+    <Compile Include="Editora.cs" />
     <Compile Include="Emprestimo.cs" />
+    <Compile Include="Estado.cs" />
+    <Compile Include="Usuario.cs" />
     <Compile Include="Globais.cs" />
     <Compile Include="GrupoUsuario.cs" />
-    <Compile Include="HistoricoUsuario.cs" />
+    <Compile Include="HistoricoLeitor.cs" />
+    <Compile Include="Livro.cs" />
     <Compile Include="Permissao.cs" />
     <Compile Include="Reserva.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="Situacao.cs" />
+    <Compile Include="TipoLeitor.cs" />
+    <Compile Include="Leitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

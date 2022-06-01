@@ -2,42 +2,44 @@
 
 namespace Model
 {
-    public class Emprestimo
+    public class HistoricoLeitor
     {
         private int codigo;
         private int codigoLivro;
         private int codigoLeitor;
         private int codigoUsuario;
-        private DateTime dataHoraEmprestimo;
-        private DateTime dataHoraDevolucao;
+        private DateTime dataLocacao;
+        private DateTime dataDevolucao;
         private int exemplar;
+        private DateTime dataRenovacao;
 
         public int Codigo
         {
-            get
-            {
-                return codigo;
-            }
-            set
-            {
-                codigo = value;
-            }
+            get { return codigo; }
+            set { codigo = value; }
         }
+        public DateTime DataRenovacao
+        {
+            get { return dataRenovacao; }
+            set { dataRenovacao = value; }
+        }
+
         public int Exemplar
         {
             get { return exemplar; }
             set { exemplar = value; }
         }
-        public DateTime DataHoraDevolucao
+
+        public DateTime DataDevolucao
         {
-            get { return dataHoraDevolucao; }
-            set { dataHoraDevolucao = value; }
+            get { return dataDevolucao; }
+            set { dataDevolucao = value; }
         }
 
-        public DateTime DataHoraEmprestimo
+        public DateTime DataLocacao
         {
-            get { return dataHoraEmprestimo; }
-            set { dataHoraEmprestimo = value; }
+            get { return dataLocacao; }
+            set { dataLocacao = value; }
         }
 
         public int CodigoUsuario

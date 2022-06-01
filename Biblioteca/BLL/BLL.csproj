@@ -41,8 +41,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutorBLL.cs" />
+    <Compile Include="CategoriaBLL.cs" />
+    <Compile Include="CidadeBLL.cs" />
+    <Compile Include="EmprestimoBLL.cs" />
+    <Compile Include="EstadoBLL.cs" />
+    <Compile Include="LivroBLL.cs" />
+    <Compile Include="ReservaBLL.cs" />
+    <Compile Include="SituacaoBLL.cs" />
+    <Compile Include="TipoUsuarioBLL.cs" />
     <Compile Include="UsuarioBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{ee026b64-5c4c-483a-afdf-f2b36b12b531}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{88c6afce-999a-4ff1-9833-10e61420cf30}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
