@@ -1,4 +1,5 @@
 ﻿using Model;
+using System;
 using System.Data;
 
 namespace BLL
@@ -7,6 +8,18 @@ namespace BLL
     {
         public Emprestimo Inserir(Emprestimo _emprestimo)
         {
+            if (_emprestimo.CodigoLivro == 0)
+                throw new Exception("Informe o livro");
+
+            if (_emprestimo.Exemplar == 0)
+                throw new Exception("Informe a quantidade");
+
+            if (_emprestimo.CodigoUsuario == 0)
+                throw new Exception("Informe o usuário");
+
+            //Validar depois a data Emprestimo e Data Devolução
+              
+
             EmprestimoBLL emprestimoBLL = new EmprestimoBLL();
             return emprestimoBLL.Inserir(_emprestimo);
         }

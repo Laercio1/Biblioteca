@@ -1,4 +1,5 @@
 ﻿using Model;
+using System;
 using System.Data;
 
 namespace BLL
@@ -7,6 +8,9 @@ namespace BLL
     {
         public Cidade Inserir(Cidade _cidade)
         {
+            if (_cidade.Descricao == "")
+                throw new Exception("Informe a descrição");
+
             CidadeBLL cidadeBLL = new CidadeBLL();
             return cidadeBLL.Inserir(_cidade);
         }
@@ -18,8 +22,8 @@ namespace BLL
         }
         public Cidade Alterar(Cidade _categoria)
         {
-            CidadeBLL categoriaBLL = new CidadeBLL();
-            return categoriaBLL.Alterar(_categoria);
+            CidadeBLL cidadeBLL = new CidadeBLL();
+            return cidadeBLL.Alterar(_categoria);
         }
         public void Excluir(int _id)
         {

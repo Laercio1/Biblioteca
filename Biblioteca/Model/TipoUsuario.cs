@@ -1,11 +1,11 @@
 ﻿namespace Model
 {
-    public class TipoLeitor
+    public class TipoUsuario
     {
         private int codigo;
-        private int descricao;
+        private string descricao;
 
-        public int Descricao
+        public string Descricao
         {
             get { return descricao; }
             set { descricao = value; }

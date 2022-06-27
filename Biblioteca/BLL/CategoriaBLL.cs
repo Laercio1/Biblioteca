@@ -1,4 +1,5 @@
 ﻿using Model;
+using System;
 using System.Data;
 
 namespace BLL
@@ -7,6 +8,9 @@ namespace BLL
     {
         public Categoria Inserir(Categoria _categoria)
         {
+            if (_categoria.Descricao == "")
+                throw new Exception("Informe a descrição");
+
             CategoriaBLL categoriaBLL = new CategoriaBLL();
             return categoriaBLL.Inserir(_categoria);
         }

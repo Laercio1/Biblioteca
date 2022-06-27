@@ -5,9 +5,9 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class TipoLeitorDAL
+    public class TipoUsuarioDAL
     {
-        public TipoLeitor Inserir(TipoLeitor _tipoLeitor)
+        public TipoUsuario Inserir(TipoUsuario _tipoLeitor)
         {
             SqlConnection cn = new SqlConnection();
             try
@@ -48,7 +48,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public TipoLeitor Alterar(TipoLeitor _tipoLeitor)
+        public TipoUsuario Alterar(TipoUsuario _tipoLeitor)
         {
             SqlConnection cn = new SqlConnection();
             try

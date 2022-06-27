@@ -55,7 +55,7 @@
     <Compile Include="Permissao.cs" />
     <Compile Include="Reserva.cs" />
     <Compile Include="Situacao.cs" />
-    <Compile Include="TipoLeitor.cs" />
+    <Compile Include="TipoUsuario.cs" />
     <Compile Include="Leitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

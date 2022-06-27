@@ -1,4 +1,5 @@
 ﻿using Model;
+using System;
 using System.Data;
 
 namespace BLL
@@ -7,6 +8,14 @@ namespace BLL
     {
         public Reserva Inserir(Reserva _reserva)
         {
+            if (_reserva.CodigoLivro == 0)
+                throw new Exception("Informe o livro");
+
+            if (_reserva.CodigoUsuario == 0)
+                throw new Exception("Informe o leitor");
+
+            //Validar depois a Data Reserva
+
             ReservaBLL reservaBLL = new ReservaBLL();
             return reservaBLL.Inserir(_reserva);
         }

@@ -9,7 +9,19 @@ namespace BLL
         public Livro Inserir(Livro _livro)
         {
             if (_livro.Isbn == 0)
-                throw new Exception("Informe o campo ISBN.");
+                throw new Exception("Informe o ISBN.");
+
+            if (_livro.CodigoAutor == 0)
+                throw new Exception("Informe o Autor");
+
+            if (_livro.Titulo == "")
+                throw new Exception("Informe o Título");
+
+            if (_livro.CodigoEditora == 0)
+                throw new Exception("Informe a Editora");
+
+            if (_livro.Tombo == 0)
+                throw new Exception("Informe o Tombo");
 
 
             LivroBLL livroBLL = new LivroBLL();

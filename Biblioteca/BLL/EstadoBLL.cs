@@ -1,14 +1,18 @@
 ﻿using Model;
+using System;
 using System.Data;
 
 namespace BLL
 {
     class EstadoBLL
     {
-        public Estado Inserir(Estado _categoria)
+        public Estado Inserir(Estado _estado)
         {
-            EstadoBLL categoriaBLL = new EstadoBLL();
-            return categoriaBLL.Inserir(_categoria);
+            if (_estado.Descricao == "")
+                throw new Exception("Informe a descrição");
+
+            EstadoBLL estadoBLL = new EstadoBLL();
+            return estadoBLL.Inserir(_estado);
         }
 
         public DataTable Buscar(string _filtro)

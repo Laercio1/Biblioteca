@@ -1,4 +1,5 @@
 ﻿using Model;
+using System;
 using System.Data;
 
 namespace BLL
@@ -7,6 +8,9 @@ namespace BLL
     {
         public Situacao Inserir(Situacao _situacao)
         {
+            if (_situacao.Descricao == "")
+                throw new Exception("Informe a descrição");
+
             SituacaoBLL situacaoBLL = new SituacaoBLL();
             return situacaoBLL.Inserir(_situacao);
         }

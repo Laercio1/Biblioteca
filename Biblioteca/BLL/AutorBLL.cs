@@ -12,6 +12,9 @@ namespace BLL
     {
         public Autor Inserir(Autor _autor)
         {
+            if (_autor.NomeAutor == "")
+                throw new Exception("Informe o nome");
+
             AutorBLL autorBLL = new AutorBLL();
             return autorBLL.Inserir(_autor);
         }

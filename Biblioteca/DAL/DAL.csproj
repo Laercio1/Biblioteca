@@ -57,7 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservaDAL.cs" />
     <Compile Include="SituacaoDAL.cs" />
-    <Compile Include="TipoLeitorDAL.cs" />
+    <Compile Include="TipoUsuarioDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>
